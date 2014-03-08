@@ -16,8 +16,8 @@
 //	THAT WERE DISTRIBUTED BY MY OWN WEB SITE -- I CAN'T DEBUG OTHER PEOPLE'S
 //	ERRORS!
 // 
-// Script (C)2006 Kevin Bjorke. Free for use and re-use.
-//	If you like ChartThrob, consider contributing to http://www.photopermit.org/
+// Script (C)2006-2010 Kevin Bjorke. Free for use and re-use.
+//	If you like ChartThrob, consider contributing to the flickr "New Black and White" group
 //
 // For use with Thomas Howard's grayscale chart method found at
 //    http://LuminaryArts.com/Reference/Articles/PPDN/
@@ -31,13 +31,17 @@
 //   process. Save the curve itself -- when applied to B&W images, this new curve will
 //   re-map the grayscale values of those images into a range that will give you the maximum
 //   dynamic possibilities for your printing process.
+//
+// An illustrated guide created by a Charthrob user:
+//    http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm
+//
 #target photoshop
 app.bringToFront();
 
 // global values /////////
 
-gVersion = 1.07;
-gDate = "14 Nov 2006";
+gVersion = 1.08;
+gDate = "4 Jan 2010";
 var gTitle = "ChartThrob V"+gVersion;
 
 // on localized builds we pull the $$$/Strings from a .dat file, see documentation for more details
@@ -48,13 +52,13 @@ var strButtonHelp = localize("$$$/JavaScripts/ChartThrob/Help=Help");
 // these widths etc used to generate new charts
 var gDPI = 300.0;
 var gDPIScale = 1.0;
-var gWidth = 1200;
-var gHeight = 1210;
-var gXMarg = 6;
-var gYMarg = 75;
-var gPatch = 100;
-var gStripWidth = 85;
-var gGradWidth = 50;
+var gWidth = new UnitValue(1200,"px");
+var gHeight = new UnitValue(1210,"px");
+var gXMarg = new UnitValue(6,"px");
+var gYMarg = new UnitValue(75,"px");
+var gPatch = new UnitValue(100,"px");
+var gStripWidth = new UnitValue(85,"px");
+var gGradWidth = new UnitValue(50,"px");
 var gX21 = gXMarg*2+10*gPatch;
 var gXGrad = gX21 + gStripWidth;
 var gXBar = gXGrad + gGradWidth;
@@ -64,18 +68,18 @@ var gChartName = "Grayscale_Chart";
 var gNoisy = false;
 
 // some useful colors
-var Black = new SolidColor();
-Black.rgb.red = 0;
-Black.rgb.green = 0;
-Black.rgb.blue = 0;
-var White = new SolidColor();
-White.rgb.red = 255;
-White.rgb.green = 255;
-White.rgb.blue = 255;
-var Red = new SolidColor;
-Red.rgb.red = 255.0;
-Red.rgb.green = 0.0;
-Red.rgb.blue = 0.0;
+var gBLACK = new SolidColor();
+gBLACK.rgb.red = 0;
+gBLACK.rgb.green = 0;
+gBLACK.rgb.blue = 0;
+var gWHITE = new SolidColor();
+gWHITE.rgb.red = 255;
+gWHITE.rgb.green = 255;
+gWHITE.rgb.blue = 255;
+var gRED = new SolidColor;
+gRED.rgb.red = 255.0;
+gRED.rgb.green = 0.0;
+gRED.rgb.blue = 0.0;
 
 // these fracions used to determine boundaries in scanned charts
 var gBorderL = (gXMarg/gWidth);
@@ -104,13 +108,13 @@ function reset_dpi(newDPI)
 // these widths etc used to generate new charts
     gDPI = newDPI;
     gDPIScale = newDPI / 300.0;
-    gWidth = gDPIScale*1200;
-    gHeight = gDPIScale*1210;
-    gXMarg = gDPIScale*6;
-    gYMarg = gDPIScale*75;
-    gPatch = gDPIScale*100;
-    gStripWidth = gDPIScale*85;
-    gGradWidth = gDPIScale*50;
+    gWidth = new UnitValue((gDPIScale*1200),"px");
+    gHeight = new UnitValue((gDPIScale*1210),"px");
+    gXMarg = new UnitValue((gDPIScale*6),"px");
+    gYMarg = new UnitValue((gDPIScale*75),"px");
+    gPatch = new UnitValue((gDPIScale*100),"px");
+    gStripWidth = new UnitValue((gDPIScale*85),"px");
+    gGradWidth = new UnitValue((gDPIScale*50),"px");
     gX21 = gXMarg*2+10*gPatch;
     gXGrad = gX21 + gStripWidth;
     gXBar = gXGrad + gGradWidth;
@@ -126,8 +130,8 @@ function help_dialog()
     dlg.gttl = dlg.add('group');
     dlg.gttl.orientation = "column";
     dlg.gttl.spacing = 2;
-	st(dlg.gttl,gTitle);
-	st(dlg.gttl,gDate);
+	st(dlg.gttl,(gTitle+", "+gDate));
+	st(dlg.gttl,"http://www.photorant.com/");
     dlg.gtop = dlg.add('group');
     dlg.gtop.orientation = "column";
     dlg.gtop.spacing = 2;
@@ -238,8 +242,8 @@ function user_dialog()
     dlg.gttl = dlg.add('group');
     dlg.gttl.orientation = "column";
     dlg.gttl.spacing = 2;
-	st(dlg.gttl,gTitle);
-	st(dlg.gttl,gDate);
+	st(dlg.gttl,(gTitle+", "+gDate));
+	st(dlg.gttl,"http://www.photorant.com/");
 
     // scan panel
     if (scannable == true) {
@@ -382,7 +386,7 @@ function gray_values(ColorSamples)
     var paperColor = ColorSamples[0]; // paper tone will be in the first sample
     if (gNoisy) {
 	alert("Paper base color: ["+paperColor.rgb.red+","+
-		paperColor.rgb.green+","+paperColor.rgb.blue+"]");
+		    paperColor.rgb.green+","+paperColor.rgb.blue+"]");
     }
     if ((paperColor.rgb.red < 128) ||
 	(paperColor.rgb.green < 128) ||
@@ -682,7 +686,7 @@ function vertical_grad()
     var bd = boundArray(gXGrad,gXGrad+gGradWidth,0,gHeight);
     app.activeDocument.selection.select(bd);
     var xc = gXGrad + (gGradWidth/2);
-    draw_Gradient(xc,gHeight,xc,0,Black,White)
+    draw_Gradient(xc,gHeight,xc,0,gBLACK,gWHITE)
     app.activeDocument.selection.deselect();
 }
 
@@ -691,10 +695,10 @@ function draw_bars(xStart,margin)
 {
     var bd = boundArray(xStart,gWidth,0,gHeight);
     app.activeDocument.selection.select(bd);
-    app.activeDocument.selection.fill(Black);
+    app.activeDocument.selection.fill(gBLACK);
     bd = boundArray(xStart,gWidth-margin,margin,margin+(gHeight-margin)/2);
     app.activeDocument.selection.select(bd);
-    app.activeDocument.selection.fill(White);
+    app.activeDocument.selection.fill(gWHITE);
     app.activeDocument.selection.deselect();
 }
 
@@ -892,7 +896,7 @@ function patch(i,j)
     selectPatch(i,j);
     doc.activeLayer.applyAverage();
     if (gShowSamples) {
-	doc.selection.stroke(Red,1);
+	doc.selection.stroke(gRED,1);
     }
     //
     var c = patchCenter(i,j);
@@ -909,7 +913,7 @@ function outStroke()
 {
     var bd = boundArray(0,gWidth,0,gHeight);
     app.activeDocument.selection.select(bd);
-    app.activeDocument.selection.stroke(Black,1);
+    app.activeDocument.selection.stroke(gBLACK,1);
     app.activeDocument.selection.deselect(); // or, even better, undo
 }
 
@@ -1111,6 +1115,10 @@ function scan_chart()
     }
     app.activeDocument = origDoc;
     app.activeDocument.selection.deselect();
+	if (gShowSamples) {
+		app.activeDocument = samplerDoc;
+		app.activeDocument.selection.deselect();
+	}
     if (i < 2) {
 	alert("Sorry, not enough samples had values to estimate a curve");
     } else {
@@ -1125,7 +1133,7 @@ function scan_chart()
 function build_chart()
 {
     var newDoc = app.documents.add(gWidth,gHeight,gDPI,gChartName,NewDocumentMode.RGB,DocumentFill.TRANSPARENT);
-    app.backGroundColor = White;
+    app.backGroundColor = gWHITE;
     app.activeDocument.flatten();
     make101();
     make21();
@@ -1134,7 +1142,7 @@ function build_chart()
     var cJust = Justification.CENTER;
     var L;
     var S = 16*(72/300.0); // points, not pixels
-    L = writeText(cCtr,cBot-gDPIScale*75,gTitle+" ©2006 Kevin Bjorke",0,cJust);
+    L = writeText(cCtr,cBot-gDPIScale*75,gTitle+" ©2006-2010 Kevin Bjorke",0,cJust);
     L.textItem.size = S;
     L = writeText(cCtr,cBot-gDPIScale*58,"http://www.photorant.com/",0,cJust);
     L.textItem.size = S;
@@ -1159,7 +1167,7 @@ function main()
     if (user_dialog() < 1) return;
     var strtRulerUnits = app.preferences.rulerUnits;
     if (strtRulerUnits != Units.PIXELS) {
-	app.preferences.rulerUnits = Units.PIXELS; // selections are always in pixels
+		app.preferences.rulerUnits = Units.PIXELS; // selections are always in pixels
     }
     if (gMakeChart) {
 	build_chart();
