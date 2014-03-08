@@ -138,10 +138,10 @@ Many people have described their processes and success using ChartThrob. Google 
 
 * The [original ChartThrob blog post on Botzilla.Com](http://www.botzilla.com/blog/archives/000544.html)
 * A [Third-Party Guide to using Charthrob](http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm) on inkjetnegative.com
-* A [recent (2013) demo: ChartThrob for President]( can also me found here: )http://fourtoes.co.uk/iblog/?p=6475) !?
+* A recent (2013) demo: [ChartThrob for President](http://fourtoes.co.uk/iblog/?p=6475) !?
 * A long shoe-horning of ChartThrob into QuadToneRIP profiles, with [great results after the inital effort](http://www.luminous-landscape.com/tutorials/qtr.shtml), on Luminous Landscape
 * [Flickr search for ChartThrob](http://www.flickr.com/search/?q=chartthrob)
-* [Google Image Search](: )https://www.google.com/search?q=chartThrob+-elton&tbm=isch)
+* [Google Image Search](https://www.google.com/search?q=chartThrob+-elton&tbm=isch)
 
 Enjoy, star this repo, and share your great prints!
 kb
