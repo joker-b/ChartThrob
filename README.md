@@ -1,12 +1,12 @@
-<b>_ChartThrob_</b> is a tool for maximizing the tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
+<b>_ChartThrob_</b> is a tool for maximizing the useful tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
 
 _ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use. Tech-specs-wise, it's a JSX-format script. _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
 _ChartThrob_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
 
-### Current Version
+#### Current Version
 
-The current version is <b>1.08</b> -- updates have mostly been to accomodate changes in Photoshop, the core functions have remained steady.
+The current version is <b>1.09</b> -- by request, an option was added to negate (invert) the final output curve, for use with [QuadToneRIP.](http://www.quadtonerip.com/html/QTRoverview.html)
 
 ### Installing _ChartThrob_
 
@@ -90,7 +90,7 @@ With the curve applied, the original image may look dull and washed out on the m
 
 <dt>How can I be notified of new versions of <i>ChartThrob?</i></dt>
    <dd>Use the <a href="http://www.botzilla.com/blog/index.xml">Botzilla RSS feed</a> and "watch" this GitHub repo
-    (see the "Watch" button at the top of the GitHub page). Feel free to "star" it too :)</dd>
+    (see the "Watch" button at the top of the GitHub page). Feel free to [star](https://github.com/joker-b/ChartThrob/star) ChartThroub as a favorite, too :)</dd>
 
 <dt>Does<i>ChartThrob</i> work with Photoshop CS3 (or 4, 5, 6...), now that it's out?</dt>
    <dd>Yes.</dd>
@@ -143,5 +143,6 @@ Many people have described their processes and success using ChartThrob. Google 
 * [Flickr search for ChartThrob](http://www.flickr.com/search/?q=chartthrob)
 * [Google Image Search](https://www.google.com/search?q=chartThrob+-elton&tbm=isch)
 
-Enjoy, star this repo, and share your great prints!
+Enjoy, [star the ChartThrob repo](https://github.com/joker-b/ChartThrob/star), and share your great prints!
+
 kb
