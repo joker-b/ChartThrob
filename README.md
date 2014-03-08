@@ -1,8 +1,8 @@
-<b>_ChartThrob_</b> is a tool for maximizing the tonal range of digital negatives used for alternative-process printing. Photographers have been printing with ChartThrob every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
+<b>_ChartThrob_</b> is a tool for maximizing the tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
 
 _ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use. Tech-specs-wise, it's a JSX-format script. _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
-_ChartThrob<_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
+_ChartThrob_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
 
 ### Current Version
 
@@ -136,6 +136,8 @@ Many people have described their processes and success using ChartThrob. Google 
 * A Third-Party Guide to using Charthrob on inkjetnegative.com here:
 http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm
 * A recent (2013) demo can also me found here: http://fourtoes.co.uk/iblog/?p=6475
+* Flickr search: http://www.flickr.com/search/?q=chartthrob
+* Google Image Search: https://www.google.com/search?q=chartThrob+-elton&tbm=isch
 
 Enjoy, star this repo, and share your great prints!
 kb
