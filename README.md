@@ -1,20 +1,20 @@
 <b>_ChartThrob_</b> is a tool for maximizing the useful tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
 
-_ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use. Tech-specs-wise, it's a JSX-format script. _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
+_ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use.  _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
 _ChartThrob_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
 
-#### Current Version
+#### Current Version: 1.09
 
 The current version is <b>1.09</b> -- by request, an option was added to negate (invert) the final output curve, for use with [QuadToneRIP.](http://www.quadtonerip.com/html/QTRoverview.html)
 
-### Installing _ChartThrob_
+# Installing _ChartThrob_
 
 To install, first either clone this GitHub repository or download as a .zip file (if you're new to GitHub: look at the download/clone buttons on the right side of the GitHub page). Once you've got the repo on your local disk, copy the file  "ChartThrob.jsx" into your Photoshop scripts directory, which will typically be something like "Adobe Photoshop CS6 (64 Bit)/Presets/Scripts" (the relative location within the Photoshop directory is the same for both Windows and Macintosh)
 
 That's it! The next time you start Photoshop, _ChartThrob_ will appear as an option under Photoshop's "File&#8594;Scripts" menu.
 
-### Using _ChartThrob_
+# Using _ChartThrob_
 
 _ChartThrob_ is really two scripts in one. First, it's a script for _creating_ grayscale calibration charts. Second, it's a tool for automatically _evaluating_ scanned prints of those charts and setting up appropriate profiles depending on the nature of your printing process.
 
@@ -46,9 +46,12 @@ Also, be sure that your printing is uniform across the entire size of the chart 
 
 Okay, so now you've made a positive print from the chart. Let it dry, and then scan it, making sure you have a linear (gamma 1.0) scan with the full grayscale range  (see the <a href="#faq">FAQ</a> below on how to do this). Crop the scan back to the boundaries of the chart, and you'll have something perhaps like the image here.
 
-> _Cyanotype printers only:_ Be careful when scanning, the strong blue tone can challenge some grayscale
-> conversions. If you have issues with the results, consider altering the grayscale mix. Use the Photoshop
-> color mixer, set to monochrme. Get a result you like and use the same color-mix values for _every_ scan.
+_ChartThrob_ should accept scans in RGB, grayscale, CMYK, etc.
+
+> _For cyanotype printers only:_ Be careful when scanning your cyanotype prints, the strong blue
+> tone can challenge some grayscale
+> conversions. If you have issues with the results, consider forcing the grayscale mix. Use the Photoshop
+> color mixer, set to monochrome. Get a result you like and use the same color-mix values for _every_ scan.
 
 <center><img alt="ChartThrobScan.jpg" vspace=4 hspace=6 src="http://www.botzilla.com/blog/pix2006/ChartThrobScan.jpg" width="400" height="403" border="0" /></center>
 
@@ -73,7 +76,7 @@ With the curve applied, the original image may look dull and washed out on the m
 
 <!-- SPACER ----------------------------------------- -->
 
-## The _ChartThrob_ FAQ</a>
+# The _ChartThrob_ FAQ</a>
 
 <dl>
 <dt>Will <i>ChartThrob</i> work with 16-bit images? I keep giving it 16-bit scans but  it reduces them to 8-bit.</dt>
@@ -126,13 +129,13 @@ With the curve applied, the original image may look dull and washed out on the m
    <dd>First: <i>Upgrade your version of (free) ChartThrob and/or (not free but worth it) Photoshop.</i> <i>ChartThrob</i> doesn't actually use "Myriad" &#151; it only uses "Arial." I'm told it's "an Adobe Thing" which was also updated in Photoshop CS3. <i>IFF</i> you get those (annoying but harmless) "font not found" messages: Just upgrade to V1.06 or later. <i>Or,</i> if you're insanely determined to use an old version, install 'Myriad' and those dialog boxes will vanish forever.</dd>
 
 <dt>Where can I find out more about <i>ChartThrob,</i> and compare results with other users?</dt>
-   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <i><a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob.</a></i> Or just poke it into [Google](https://www.google.com/search?q=chartThrob+-elton&tbm=isch) &#151; it's been encouraging to see <i>ChartThrob</i> users have cropped up all over the net.</dd>
+   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <i><a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob.</a></i> Or just poke it into <a href="https://www.google.com/search?q=chartThrob+-elton&tbm=isch">Google</a> &#151; it's been encouraging to see <i>ChartThrob</i> users have cropped up all over the net.</dd>
 
 <dt>Sometimes <i>ChartThrob</i> seems to take a long time to run. How do I know that it's working at all?</dt>
    <dd>Leave the 'Histogram,' 'History,' or 'Info' panels open, and you'll see just how fast and furious <i>ChartThrob's</i> drawing and analysis really is. It's edu-taining!</dd>
 </dl>
 
-## Learn More
+# Learn More
 
 Many people have described their processes and success using ChartThrob. Google is your friend in finding them. Here are a couple of specific references worth seeing:
 
