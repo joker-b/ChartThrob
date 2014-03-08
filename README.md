@@ -4,13 +4,13 @@
 
 <i><b>ChartThrob</b> creates profiles for <b>your</b> process, for <b>your</b> printer, and lets you create consistently-beautiful digital negatives from <b>your</b> pictures &#151; every single time.</i>
 
-#### Installing <i>ChartThrob</i>
+### Installing <i>ChartThrob</i>
 
 To install it, click "Save As..." on <a href="http://www.botzilla.com/blog/archives/ChartThrob.jsx">this link.</a> Save the file as "ChartThrob.jsx" in your Photoshop scripts directory, which will typically be something like "Adobe Photoshop CS2/Presets/Scripts" (the location within the Photoshop directory is the same for both Windows and Macintosh)
 
 That's it! The next time you start Photoshop, <i>ChartThrob</i> will appear as an option under Photoshop's "File&#8212;>Scripts" menu.
 
-#### Using <i>ChartThrob</i>
+### Using <i>ChartThrob</i>
 
 <i>ChartThrob</i> is really two scripts in one. First, it's a script for creating grayscale calibration charts. Second, it's a tool for automatically evaluating scanned prints of those charts and setting up appropriate profiles depending on the nature of your printing process.
 
@@ -124,9 +124,9 @@ With the curve applied, the original image may look dull and washed out on the m
    <dd>Leave the 'Histogram,' 'History,' or 'Info' panels open, and you'll see just how fast and furious <i>ChartThrob's</i> drawing and analysis really is. It's edu-taining!</dd>
 </dl>
 
+## Learn More
 
-Useful for creating digital negatives, calibration curves and charts for any print process like Cyanotype or
-Platinum Printing. Here's the original blog post: http://www.botzilla.com/blog/archives/000544.html
+Here's the original blog post: http://www.botzilla.com/blog/archives/000544.html
 
 You can find a Third-Party Guide to using Charthrob on inkjetnegative.com here:
 http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm
