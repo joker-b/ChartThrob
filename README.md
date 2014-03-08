@@ -1,8 +1,9 @@
-<b>_ChartThrob_</b> is a a JSX-format javascript for <a href="http://www.adobe.com/">Adobe Photoshop.</a> It runs under Photoshop CS2 and later versions, but won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
+<b>_ChartThrob_</b> is a tool for maximizing the tonal range of digital negatives used for alternative-process printing. Photographers have been printing with ChartThrob every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
+
+_ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use. Tech-specs-wise, it's a JSX-format script. _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
 <i><b>ChartThrob</b> creates profiles for <b>your</b> process, for <b>your</b> printer, and lets you create consistently-beautiful digital negatives from <b>your</b> pictures &#151; every single time.</i>
 
-Photographers have been printing with ChartThrob every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
 
 ### Installing _ChartThrob_
 
@@ -68,59 +69,60 @@ With the curve applied, the original image may look dull and washed out on the m
 ## The _ChartThrob_ FAQ</a>
 
 <dl>
-<dt>Will _ChartThrob_ work with 16-bit images? I keep giving it 16-bit scans but  it reduces them to 8-bit.</dt>
-  <dd>Yes. You can absolutely apply a printing curve made by _ChartThrob_ to 16-bit  images. Just apply the curve in the usual ways. _ChartThrob_ does all of its calibration work in 8-bit, but unless you have an extremely narrow and contrasty process (say, rubber stamps), that should be plenty of precision for the purpose. Applying the resultant curve to a 16-bit image will still give you a 16-bit image.</dd>
+<dt>Will <i>ChartThrob</i> work with 16-bit images? I keep giving it 16-bit scans but  it reduces them to 8-bit.</dt>
+  <dd>Yes. You can absolutely apply a printing curve made by <i>ChartThrob</i> to 16-bit  images. Just apply the curve in the usual ways. <i>ChartThrob</i> does all of its calibration work in 8-bit, but unless you have an extremely narrow and contrasty process (say, rubber stamps), that should be plenty of precision for the purpose. Applying the resultant curve to a 16-bit image will still give you a 16-bit image.</dd>
 
 <dt>What about 32-bit  images?</dt>
   <dd>Do you have a 32-bit printer? Call me...</dd>
 
-<dt>Can _ChartThrob_ be ued to calibrate B&W images printed by bookprint services like <a href="http://www.lulu.com/">Lulu</a> and <a href="http://www.blurb.com/">Blurb,</a> or on my local newspaper's press?</dt>
+<dt>Can <i>ChartThrob</i> be ued to calibrate B&W images printed by bookprint services like <a href="http://www.lulu.com/">Lulu</a> and <a href="http://www.blurb.com/">Blurb,</a> or on my local newspaper's press?</dt>
   <dd>If the printer is reasonably consistent from run to run, then absolutely yes.</dd>
 
 <dt>How do I contact you to make a report or tell you my great idea for an enhancement or to send you money?</dt>
-  <dd>_ChartThrob is free._ You are, however, welcome to buy my photos. You can contact me here on GitHub or at PhotoRant as 'bjorke' at botzilla.com.</dd>
+  <dd><i>ChartThrob is free.</i> You are, however, welcome to buy my photos. You can contact me here on GitHub or at PhotoRant as 'bjorke' at botzilla.com.</dd>
 
-<dt>How can I be notified of new versions of _ChartThrob?_</dt>
-   <dd>Use the <a href="http://www.botzilla.com/blog/index.xml">Botzilla RSS feed</a> and "watch" thsi GitHub repo. Feel free to "star" it too :)</dd>
+<dt>How can I be notified of new versions of <i>ChartThrob?</i></dt>
+   <dd>Use the <a href="http://www.botzilla.com/blog/index.xml">Botzilla RSS feed</a> and "watch" this GitHub repo
+    (see the "Watch" button at the top of the GitHub page). Feel free to "star" it too :)</dd>
 
-<dt>Does_ChartThrob_ work with Photoshop CS3 (or 4, 5, 6...), now that it's out?</dt>
+<dt>Does<i>ChartThrob</i> work with Photoshop CS3 (or 4, 5, 6...), now that it's out?</dt>
    <dd>Yes.</dd>
 
-<dt>I only have Photoshop 5 (or 7, or CS). Will you change _ChartThrob_ to work with my old version of Photoshop?</dt>
-   <dd>Nope. _ChartThrob_ uses UI tools that were introduced with CS2, and Photoshop pre-7 didn't have scripting at all.</dd>
+<dt>I only have Photoshop 5 (or 7, or CS). Will you change <i>ChartThrob</i> to work with my old version of Photoshop?</dt>
+   <dd>Nope. <i>ChartThrob</i> uses UI tools that were introduced with CS2, and Photoshop pre-7 didn't have scripting at all.</dd>
 
-<dt>Why doesn't _ChartThrob_ set curve points for _all_ of the patches? It only seems to set about a dozen points on the curve.</dt>
-   <dd>This is a limitation of Photoshop, but 14 points (along a parametric curve) seem to be plenty for real-world printing. The full range of patches are there for _you_ to see.</dd>
+<dt>Why doesn't <i>ChartThrob</i> set curve points for <i>all</i> of the patches? It only seems to set about a dozen points on the curve.</dt>
+   <dd>This is a limitation of Photoshop, but 14 points (along a parametric curve) seem to be plenty for real-world printing. The full range of patches are there for <i>you</i> to see.</dd>
 
 <dt>What do all those extra check boxes do?</dt>
    <dd>Try them out!</dd>
 
-<dt>Can you make _ChartThrob_ as an Action instead? I don't like having to call scripts from the 'File' menu, I'd rather see it in the actions palette and attach it to a hot key.</dt>
-   <dd>Actions can't do everything scripts can do, especially the stuff that _ChartThrob_ does. You _can_ create an Action that will start-up _ChartThrob._ That's easy, do it the normal way. The Action won't see the stuff you click in the _ChartThrob_ dialogue boxes, though. That seems to be a limitation of the current Photoshop.</dd>
+<dt>Can you make <i>ChartThrob</i> as an Action instead? I don't like having to call scripts from the 'File' menu, I'd rather see it in the actions palette and attach it to a hot key.</dt>
+   <dd>Actions can't do everything scripts can do, especially the stuff that <i>ChartThrob</i> does. You <i>can</i> create an Action that will start-up <i>ChartThrob.</i> That's easy, do it the normal way. The Action won't see the stuff you click in the <i>ChartThrob</i> dialogue boxes, though. That seems to be a limitation of the current Photoshop.</dd>
 
-<dt>I resized the chart scan to be really, really small and now I'm getting junky values from _ChartThrob_.</dt>
+<dt>I resized the chart scan to be really, really small and now I'm getting junky values from <i>ChartThrob</i>.</dt>
    <dd>The program averages-out an area of the scanned chart and samples this average. It does this to compensate for grain and paper texture. If the scan is too small to get a good average, the quality of the curve will suffer. In general, don't let your scanned-chart image get smaller than, say, 600 pixels across.</dd>
 
 <dt>The defaut chart size is 4 inches at 300 dpi. I want 7.3 inches at 1440 dpi. Can you resize it?</dt>
    <dd>You can use Photoshop's 'Image Size' command for now. I'm considering adding more print-size options, though they will make the dialog box more complicated.</dd>
 
 <dt>Should I be setting stuff up using "Relative Colormetric" in the print dialog? What color space should I use?</dt>
-   <dd>It doesn't really matter what your print settings are, as long as they are always the same each time you make a printing negative. In general, try to avoid anything in your printing or scanning processes described as "automatic," since such functions may be changing stuff behind your back &#151; and be sure that your scan is in the same color space (particularly w.r.t. gamma) as the B&W images you plan to print.<br />&nbsp;<br />Be sure that your scan covers the full print range from darkest to lightest within the _straight-line portion_ of the scan. Some scanners will "roll-off" the shadows and/or highlights. This sort of compression of the original print values will give _ChartThrob_ a distorted input.<br /><center><img alt="ChartScan-WrongRight.jpg" src="http://www.botzilla.com/blog/pix2006/ChartScan-WrongRight.jpg" width="720" height="592" border="0" vspace=6 /><br /><i><font size="-2">You want the <b>full range</b> when scanning. These dialogs from EpsonScan&#8482;<br />show that the Automatic exposure of a printed ChartThrob chart<br />distorts the grayscale values. Instead, <b>manually</b> set the max and min pointers <br />to beyond the brightest and darkest vales, &amp; <b>set the gamma to 1.00.</b><br />Note that the entire grayscale will thus be linear: the "shoulder" &amp; "toe" buttons will be ignored.<br />&nbsp;</font></i></center></dd>
+   <dd>It doesn't really matter what your print settings are, as long as they are always the same each time you make a printing negative. In general, try to avoid anything in your printing or scanning processes described as "automatic," since such functions may be changing stuff behind your back &#151; and be sure that your scan is in the same color space (particularly w.r.t. gamma) as the B&W images you plan to print.<br />&nbsp;<br />Be sure that your scan covers the full print range from darkest to lightest within the <i>straight-line portion</i> of the scan. Some scanners will "roll-off" the shadows and/or highlights. This sort of compression of the original print values will give <i>ChartThrob</i> a distorted input.<br /><center><img alt="ChartScan-WrongRight.jpg" src="http://www.botzilla.com/blog/pix2006/ChartScan-WrongRight.jpg" width="720" height="592" border="0" vspace=6 /><br /><i><font size="-2">You want the <b>full range</b> when scanning. These dialogs from EpsonScan&#8482;<br />show that the Automatic exposure of a printed ChartThrob chart<br />distorts the grayscale values. Instead, <b>manually</b> set the max and min pointers <br />to beyond the brightest and darkest vales, &amp; <b>set the gamma to 1.00.</b><br />Note that the entire grayscale will thus be linear: the "shoulder" &amp; "toe" buttons will be ignored.<br />&nbsp;</font></i></center></dd>
 
 <dt>I have a fax scanner and the quality is not so great. I'm losing light (or dark) tones in the printed chart! I can see them, but my scanner can't</dt>
 <dd>Either get a better scanner, borrow a better scanner, or try creating a "camera scan" &#151; take a glare-free, evenly-lit photo of the printed chart using a good-quality digital camera &#151; this may also be a solution for printing materials where the dark tones are more reflective than the light tones, thus "fooling" the scanner and not scanning well.</dd>
 
 <dt>Why isn't the generated chart a negative, since I'll be printing it as a negative? It hurts my hand to have to press &lt;Ctrl-I&gt; to invert the chart before printing.</dt>
-   <dd>Get a better grip on your printing! Some people print directly from a positive image to a negative and let their print driver do the inversion for them. Others need to print from an inverted image. _ChartThrob_ can't know if you are a negative person or a positive person. So it looks on the bright side and assumes that everyone is positive.</dd>
+   <dd>Get a better grip on your printing! Some people print directly from a positive image to a negative and let their print driver do the inversion for them. Others need to print from an inverted image. <i>ChartThrob</i> can't know if you are a negative person or a positive person. So it looks on the bright side and assumes that everyone is positive.</dd>
 
-<dt>Why does _ChartThrob_ use the font 'Myriad Pro,' which I don't have? I have to click lots of stupid 'okay' dialog boxes when I generate a new chart.</dt>
-   <dd>First: _Upgrade your version of (free) ChartThrob and/or (not free but worth it) Photoshop._ _ChartThrob_ doesn't actually use "Myriad" &#151; it only uses "Arial." I'm told it's "an Adobe Thing" which was also updated in Photoshop CS3. _IFF_ you get those (annoying but harmless) "font not found" messages: Just upgrade to V1.06 or later. _Or,_ if you're insanely determined to use an old version, install 'Myriad' and those dialog boxes will vanish forever.</dd>
+<dt>Why does <i>ChartThrob</i> use the font 'Myriad Pro,' which I don't have? I have to click lots of stupid 'okay' dialog boxes when I generate a new chart.</dt>
+   <dd>First: <i>Upgrade your version of (free) ChartThrob and/or (not free but worth it) Photoshop.</i> <i>ChartThrob</i> doesn't actually use "Myriad" &#151; it only uses "Arial." I'm told it's "an Adobe Thing" which was also updated in Photoshop CS3. <i>IFF</i> you get those (annoying but harmless) "font not found" messages: Just upgrade to V1.06 or later. <i>Or,</i> if you're insanely determined to use an old version, install 'Myriad' and those dialog boxes will vanish forever.</dd>
 
-<dt>Where can I find out more about _ChartThrob,_ and compare results with other users?</dt>
-   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">_A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob._</a> Or just poke it into Google &#151; it's been encouraging to see _ChartThrob_ users have cropped up all over the net.</dd>
+<dt>Where can I find out more about <i>ChartThrob,</i> and compare results with other users?</dt>
+   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">_A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob._</a> Or just poke it into Google &#151; it's been encouraging to see <i>ChartThrob</i> users have cropped up all over the net.</dd>
 
-<dt>Sometimes _ChartThrob_ seems to take a long time to run. How do I know that it's working at all?</dt>
-   <dd>Leave the 'Histogram,' 'History,' or 'Info' panels open, and you'll see just how fast and furious _ChartThrob's_ drawing and analysis really is. It's edu-taining!</dd>
+<dt>Sometimes <i>ChartThrob</i> seems to take a long time to run. How do I know that it's working at all?</dt>
+   <dd>Leave the 'Histogram,' 'History,' or 'Info' panels open, and you'll see just how fast and furious <i>ChartThrob's</i> drawing and analysis really is. It's edu-taining!</dd>
 </dl>
 
 ## Learn More
