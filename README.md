@@ -6,7 +6,7 @@ _ChartThrob_ creates profiles for _your_ process of choice, for _your_ printer, 
 
 ### Current Version
 
-The current version is _1.08_ -- updates have mostly been to accomodate changes in Photoshop, the core functions have remained steady.
+The current version is <b>1.08</b> -- updates have mostly been to accomodate changes in Photoshop, the core functions have remained steady.
 
 ### Installing _ChartThrob_
 
@@ -126,7 +126,7 @@ With the curve applied, the original image may look dull and washed out on the m
    <dd>First: <i>Upgrade your version of (free) ChartThrob and/or (not free but worth it) Photoshop.</i> <i>ChartThrob</i> doesn't actually use "Myriad" &#151; it only uses "Arial." I'm told it's "an Adobe Thing" which was also updated in Photoshop CS3. <i>IFF</i> you get those (annoying but harmless) "font not found" messages: Just upgrade to V1.06 or later. <i>Or,</i> if you're insanely determined to use an old version, install 'Myriad' and those dialog boxes will vanish forever.</dd>
 
 <dt>Where can I find out more about <i>ChartThrob,</i> and compare results with other users?</dt>
-   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">_A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob._</a> Or just poke it into Google &#151; it's been encouraging to see <i>ChartThrob</i> users have cropped up all over the net.</dd>
+   <dd>See <a href="http://www.hybridphoto.com/forums/showthread.php?t=36">this discussion thread</a> at HybridPhoto.com. In addition, check out this page by Michael Koch-Schulte, who has done additional work in understanding how to get the most out of the varying color sensitivities of different alt-process materials: <i><a href="http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm">A Quick Guide to Making Digital Negatives with RNP-Arrays and ChartThrob.</a></i> Or just poke it into [Google](https://www.google.com/search?q=chartThrob+-elton&tbm=isch) &#151; it's been encouraging to see <i>ChartThrob</i> users have cropped up all over the net.</dd>
 
 <dt>Sometimes <i>ChartThrob</i> seems to take a long time to run. How do I know that it's working at all?</dt>
    <dd>Leave the 'Histogram,' 'History,' or 'Info' panels open, and you'll see just how fast and furious <i>ChartThrob's</i> drawing and analysis really is. It's edu-taining!</dd>
