@@ -44,7 +44,11 @@ If you have a good grasp of your printing already, try to print so that the midt
 
 Also, be sure that your printing is uniform across the entire size of the chart &#151; if the exposure varies from one side to the other, or from the center of your prints to the edges, there won't be any way for the calibrator to second-guess that. You'll just get junk.
 
-Okay, so now you've made a positive print from the chart. Let it dry, and then scan it, making sure you have a linear (gamma 1.0) scan with the full grayscale range  (see the <a href="#faq">FAQ</a> below on how to do this). Crop the scan back to the boundaries of the chart, and you'll have something perhaps like the image here. 
+Okay, so now you've made a positive print from the chart. Let it dry, and then scan it, making sure you have a linear (gamma 1.0) scan with the full grayscale range  (see the <a href="#faq">FAQ</a> below on how to do this). Crop the scan back to the boundaries of the chart, and you'll have something perhaps like the image here.
+
+> _Cyanotype printers only:_ Be careful when scanning, the strong blue tone can challenge some grayscale
+> conversions. If you have issues with the results, consider altering the grayscale mix. Use the Photoshop
+> color mixer, set to monochrme. Get a result you like and use the same color-mix values for _every_ scan.
 
 <center><img alt="ChartThrobScan.jpg" vspace=4 hspace=6 src="http://www.botzilla.com/blog/pix2006/ChartThrobScan.jpg" width="400" height="403" border="0" /></center>
 
@@ -132,12 +136,12 @@ With the curve applied, the original image may look dull and washed out on the m
 
 Many people have described their processes and success using ChartThrob. Google is your friend in finding them. Here are a couple of specific references worth seeing:
 
-* The original blog post: http://www.botzilla.com/blog/archives/000544.html
-* A Third-Party Guide to using Charthrob on inkjetnegative.com here:
-http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm
-* A recent (2013) demo can also me found here: http://fourtoes.co.uk/iblog/?p=6475
-* Flickr search: http://www.flickr.com/search/?q=chartthrob
-* Google Image Search: https://www.google.com/search?q=chartThrob+-elton&tbm=isch
+* The [original ChartThrob blog post on Botzilla.Com](http://www.botzilla.com/blog/archives/000544.html)
+* A [Third-Party Guide to using Charthrob](http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm) on inkjetnegative.com
+* A [recent (2013) demo: ChartThrob for President]( can also me found here: )http://fourtoes.co.uk/iblog/?p=6475) !?
+* A long shoe-horning of ChartThrob into QuadToneRIP profiles, with [great results after the inital effort](http://www.luminous-landscape.com/tutorials/qtr.shtml), on Luminous Landscape
+* [Flickr search for ChartThrob](http://www.flickr.com/search/?q=chartthrob)
+* [Google Image Search](: )https://www.google.com/search?q=chartThrob+-elton&tbm=isch)
 
 Enjoy, star this repo, and share your great prints!
 kb
