@@ -2,12 +2,15 @@
 
 _ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use. Tech-specs-wise, it's a JSX-format script. _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (Sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
-<i><b>ChartThrob</b> creates profiles for <b>your</b> process, for <b>your</b> printer, and lets you create consistently-beautiful digital negatives from <b>your</b> pictures &#151; every single time.</i>
+_ChartThrob<_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
 
+### Current Version
+
+The current version is _1.08_ -- updates have mostly been to accomodate changes in Photoshop, the core functions have remained steady.
 
 ### Installing _ChartThrob_
 
-To install, first either clone this GitHub repository or download as a .zip file (if you're new to GitHub: look at the download/clone buttons on the right side of the GitHub page). Once you've got the repo on your local disk, copy the file  "ChartThrob.jsx" into your Photoshop scripts directory, which will typically be something like "Adobe Photoshop CS6/Presets/Scripts" (the location within the Photoshop directory is the same for both Windows and Macintosh)
+To install, first either clone this GitHub repository or download as a .zip file (if you're new to GitHub: look at the download/clone buttons on the right side of the GitHub page). Once you've got the repo on your local disk, copy the file  "ChartThrob.jsx" into your Photoshop scripts directory, which will typically be something like "Adobe Photoshop CS6 (64 Bit)/Presets/Scripts" (the relative location within the Photoshop directory is the same for both Windows and Macintosh)
 
 That's it! The next time you start Photoshop, _ChartThrob_ will appear as an option under Photoshop's "File&#8594;Scripts" menu.
 
