@@ -1,4 +1,4 @@
-<b>_ChartThrob_</b> is a tool for maximizing the useful tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. 
+<b>_ChartThrob_</b> is a tool for maximizing the useful tonal range of digital negatives used for alternative-process printing. Photographers have been printing with _ChartThrob_ every day since its launch in 2006, using almost every kind of alternative process: ambrotype, cyanotype, platinum, aristotype, and many more. Even [color!](http://katharinethayer.com/html/tricolor.html)
 
 _ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> and is easy to install and use.  _ChartThrob_ runs in all Photoshop versions since CS2. It won't run under Photoshop 7 or Photoshop CS (sorry, that's the price of progress). _It works for both Windows and Mac versions of Photoshop. It's free._
 
@@ -28,11 +28,11 @@ The _ChartThrob_ workflow has a few basic steps:
 1. <b>Analyze</b> the chart in _ChartThrob_ &#151; the result will be a new Curves layer containing a Printing Curve, which you can use on the spot or save for repeated use later.
 1. <b>Apply</b> that curve to any B&W images you like, before printing them to digital negatives. The curve will correct the original image grayscale values to neatly fit to the grayscale range of your chosen medium.
 
-So let's begin! From any Photoshop session, you can start-up _ChartThrob_ by selecting "File&#8594;Scripts&#8594;ChartThrob."
+So let's begin! From any Photoshop session, you can start-up _ChartThrob_ by selecting "File&#8594;Scripts&#8594;ChartThrob." A ChartThrob dialog box will appear:
 
 <center><img alt="ctCreate106.jpg" src="http://www.botzilla.com/blog/pix2006/ctCreate106.jpg" width="515" height="280" border="0" vspace=4 hspace=6  /></center>
 
-If you have no documents open and start _ChartThrob,_ you should see a dialog box similar to the one above (if you have documents open, the dialog will be more complex, but will still contain this info) (The illustrations in this doc page show both Windows and Mac examples). Pressing <b>"Help"</b> will provide you with step-by-step instructions, or pressing <b>"Build New Chart Now"</b> will do exactly that &#151; it will create a new document and start filling it with profiling information. Photoshop draws very quickly, but this will typically take several seconds &#151; especially if you have the 'Numbers' option checked. The result will look like the picture below (with or without the numeric labels).
+If you have no documents open, you should see a dialog box similar to the one above. If you already have documents open, the dialog will be more complex, but will still contain this info along with additional options (The illustrations in this doc page show both Windows and Mac examples). Pressing <b>"Help"</b> will provide you with step-by-step instructions, or pressing <b>"Build New Chart Now"</b> will do exactly that &#151; it will create a new document and start filling it with profiling information. Photoshop draws very quickly, but this will typically take several seconds &#151; especially if you have the 'Numbers' option checked. The result will look like the picture below (with or without the numeric labels).
 
 <center><img alt="ChartThrobTemp.jpg" vspace=4 hspace=6 src="http://www.botzilla.com/blog/pix2006/ChartThrobTemp.jpg" width="400" height="403" border="0"/></center>
 
@@ -137,14 +137,14 @@ With the curve applied, the original image may look dull and washed out on the m
 
 # Learn More
 
-Many people have described their processes and success using ChartThrob. Google is your friend in finding them. Here are a couple of specific references worth seeing:
+Many people have described their processes and success using ChartThrob. [Google is your friend](https://www.google.com/search?q=chartThrob+print+-elton) in finding them. Here are a couple of specific references worth seeing:
 
 * The [original ChartThrob blog post on Botzilla.Com](http://www.botzilla.com/blog/archives/000544.html)
 * A [Third-Party Guide to using Charthrob](http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm) on inkjetnegative.com
 * A recent (2013) demo: [ChartThrob for President](http://fourtoes.co.uk/iblog/?p=6475) !?
 * A long shoe-horning of ChartThrob into QuadToneRIP profiles, with [great results after the inital effort](http://www.luminous-landscape.com/tutorials/qtr.shtml), on Luminous Landscape
 * [Flickr search for ChartThrob](http://www.flickr.com/search/?q=chartthrob)
-* [Google Image Search](https://www.google.com/search?q=chartThrob+-elton&tbm=isch)
+* [Google Image Search](https://www.google.com/search?q=chartThrob+print+-elton&tbm=isch)
 
 Enjoy, [star the ChartThrob repo](https://github.com/joker-b/ChartThrob/star), and share your great prints!
 
