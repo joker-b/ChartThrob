@@ -40,9 +40,10 @@ app.bringToFront();
 
 // global values /////////
 
-gVersion = 1.09;
-gDate = "8 Mar 2014";
+gVersion = 1.11;
+gDate = "2 Aug 2014";
 var gTitle = "ChartThrob V"+gVersion;
+var gDoNotTrack = false; // set to true to disable web analytics
 
 // on localized builds we pull the $$$/Strings from a .dat file, see documentation for more details
 $.localize = true;
@@ -102,6 +103,46 @@ var gText = false;
 var gLines = true;
 var gMakeChart = false;
 var gNegate = false;
+
+// https://forums.adobe.com/message/5589227
+
+var GA_Emitter = function () {
+	this.doNotTrack = gDoNotTrack;
+	this.TID = "UA-4450500-1";		// site-specific constant
+	this.userAgent = "Photoshop/"+app.systemInformation.match(/Photo.hop Version:\s*(\S*)/)[1];
+	var sn = app.systemInformation.match(/Serial number:\s*(\d*)/)[1];
+	this.cid = sn.slice(0,8)+"-"+sn.slice(8,12)+"-"+sn.slice(12,16)+"-"+sn.slice(16,20)+"-"+sn.slice(0,12);
+	this.url = "http://www.google-analytics.com";
+	this.domain = "www.google-analytics.com:80";
+	this.required = "v=1&tid="+this.TID+"&cid="+this.cid+"&";
+	//this.call = "POST /collect HTTP/1.1\r\nHost: www.google-analytics.com\r\nUser-Agent: "+this.userAgent+"\r\nContent-Length: "+this.payload.length+"\r\n\r\n" +this.payload+"\r\nConnection: close\r\n\r\n";
+	if (this.doNotTrack) return;
+	this.reply = new String();
+	try {
+		this.conn = new Socket();
+	} catch (e) {
+		this.doNotTrack = true; // cannot track for some reason
+		return;
+	}
+	this.conn.encoding = "binary";
+
+	GA_Emitter.prototype.send_payload = function(payload) {
+		this.payload = this.required + payload;
+		this.call = "POST /collect HTTP/1.1\r\nHost: www.google-analytics.com\r\nUser-Agent: "+this.userAgent+"\r\nContent-Length: "+this.payload.length+"\r\n\r\n" +this.payload+"\r\nConnection: close\r\n\r\n";
+		if (this.doNotTrack) return;
+		//alert(this.payload);
+		if (this.conn.open(this.domain,"binary")) {
+			this.conn.write(this.call);
+			this.reply = this.conn.read(9999999999);
+			this.conn.close();
+		} else {
+			this.reply = "";
+		}
+		return this.reply.substr(this.reply.indexOf("\r\n\r\n")+4);;
+	};
+}
+
+var gTracker = new GA_Emitter();
 
 // functions ///////////////
 
@@ -1018,7 +1059,17 @@ function curveLayer(curvePoints)
 	desc16.putList( charIDToTypeID( "Adjs" ), list1 );
 	desc15.putObject( charIDToTypeID( "Type" ), charIDToTypeID( "Crvs" ), desc16 );
 	desc14.putObject( charIDToTypeID( "Usng" ), charIDToTypeID( "AdjL" ), desc15 );
-	executeAction( charIDToTypeID( "Mk  " ), desc14, DialogModes.NO );
+	try {
+		executeAction( charIDToTypeID( "Mk  " ), desc14, DialogModes.NO );
+	} catch(e) {
+		alert("Unable to complete curve layer --\n"+
+				"Try converting your scan to \"RGB Color\"\nusing the \"Image->Mode\"\n"+
+				"menu, then run ChartThrob again.");
+		gTracker.send_payload("t=exception&exd=Curve%20Layer&dp=%2Fchartthrob%2Fscan&dt=Scan%20Chart");
+		return 0;
+
+	}
+	return 1;
 }
 
 /////////////////////////////////////////////////////
@@ -1082,6 +1133,7 @@ function scan_results_report()
 		okayBtn.onClick = function () {this.parent.close(1); }
 	}
 	dlg.center();
+	gTracker.send_payload("t=pageview&dp=%2Fchartthrob%2Freport&dt=ChartThrob%20Report");
 	var result = dlg.show();
 }
 
@@ -1110,7 +1162,16 @@ function scan_chart()
 		(samplerDoc.mode == DocumentMode.DUOTONE)||
 		(samplerDoc.mode == DocumentMode.GRAYSCALE)||
 		(samplerDoc.mode == DocumentMode.INDEXEDCOLOR)) {
-			samplerDoc.changeMode(DocumentMode.RGB);
+			try {
+				samplerDoc.changeMode(ChangeMode.RGB);	
+			} catch (e) {
+				alert("Unable to convert the duplicate image\nto mode \""+ChangeMode.RGB+"\" --\n"+
+						"Try converting your scan to \"RGB Color\"\nusing the \"Image->Mode\"\n"+
+						"menu, then run ChartThrob again.");
+				gTracker.send_payload("t=exception&exd=Mode%20Issue&dp=%2Fchartthrob%2Fscan&dt=Scan%20Chart");
+				samplerDoc.close(SaveOptions.DONOTSAVECHANGES);
+				return -1;
+			}
 	}
 	app.activeDocument = samplerDoc;
 	// stuff....
@@ -1146,13 +1207,17 @@ function scan_chart()
 	}
 	if (i < 2) {
 		alert("Sorry, not enough samples had values to estimate a curve");
+		return -1;
 	} else {
 		if (verifyCurve(curvePoints) > 0) {
-			curveLayer(curvePoints);
+			if (!curveLayer(curvePoints)) {
+				return -1;
+			}
 			app.activeDocument.activeLayer.name = gCurveName;
 			app.activeDocument.activeLayer.visible = false;
 		}
 	}
+	return 0;
 }
 
 function build_chart()
@@ -1189,16 +1254,22 @@ function build_chart()
 
 function main()
 {
-	if (user_dialog() < 1) return;
+	gTracker.send_payload("t=pageview&dp=%2Fchartthrob&dt=ChartThrob");
+	if (user_dialog() < 1) {
+		return;
+	}
 	var strtRulerUnits = app.preferences.rulerUnits;
 	if (strtRulerUnits != Units.PIXELS) {
 		app.preferences.rulerUnits = Units.PIXELS; // selections are always in pixels
 	}
 	if (gMakeChart) {
+		gTracker.send_payload("t=pageview&dp=%2Fchartthrob%2Fbuild&dt=Build%20Chart");
 		build_chart();
 	} else {
-		scan_chart();
-		scan_results_report();
+		gTracker.send_payload("t=pageview&dp=%2Fchartthrob%2Fscan&dt=Scan%20Chart");
+		if (scan_chart() >= 0) {
+			scan_results_report();
+		}
 	}
 	if (strtRulerUnits != Units.PIXELS) {
 		app.preferences.rulerUnits = strtRulerUnits;
