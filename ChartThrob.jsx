@@ -40,8 +40,8 @@ app.bringToFront();
 
 // global values /////////
 
-gVersion = 1.11;
-gDate = "2 Aug 2014";
+gVersion = 1.12;
+gDate = "11 Oct 2014";
 var gTitle = "ChartThrob V"+gVersion;
 var gDoNotTrack = false; // set to true to disable web analytics
 
@@ -109,9 +109,17 @@ var gNegate = false;
 var GA_Emitter = function () {
 	this.doNotTrack = gDoNotTrack;
 	this.TID = "UA-4450500-1";		// site-specific constant
-	this.userAgent = "Photoshop/"+app.systemInformation.match(/Photo.hop Version:\s*(\S*)/)[1];
-	var sn = app.systemInformation.match(/Serial number:\s*(\d*)/)[1];
-	this.cid = sn.slice(0,8)+"-"+sn.slice(8,12)+"-"+sn.slice(12,16)+"-"+sn.slice(16,20)+"-"+sn.slice(0,12);
+	try {
+		this.userAgent = "Photoshop/"+app.systemInformation.match(/Photo.hop Version:\s*(\S*)/)[1];
+	} catch(e) {
+		this.userAgent = "Photoshop/PS";
+	}
+	try {
+		var sn = app.systemInformation.match(/Serial number:\s*(\d*)/)[1];
+		this.cid = sn.slice(0,8)+"-"+sn.slice(8,12)+"-"+sn.slice(12,16)+"-"+sn.slice(16,20)+"-"+sn.slice(0,12);
+	} catch(e) {
+		this.cid = '12345678-1234-5678-1234-567812345678';
+	}
 	this.url = "http://www.google-analytics.com";
 	this.domain = "www.google-analytics.com:80";
 	this.required = "v=1&tid="+this.TID+"&cid="+this.cid+"&";
@@ -405,7 +413,10 @@ function user_dialog()
 	gLines = dlg.bpnl.grp.lineBtn.value;
 	gLabel = dlg.bpnl.grp2.label.text;
 	gChartName = dlg.bpnl.grp2.cName.text;
-	var dv = dlg.bpnl.grp.dpiLabel.text;
+	var dv = parseInt(dlg.bpnl.grp.dpiLabel.text);
+	if (isNaN(dv)) {
+		dv = 72;
+	}
 	if (dv<72) {
 		alert("Odd dpi reset to 72 from "+dv);
 		dv = 72;
@@ -1049,10 +1060,10 @@ function curveLayer(curvePoints)
 	desc17.putReference( charIDToTypeID( "Chnl" ), ref10 );
 	var list2 = new ActionList();
 	for(i=0;i<curvePoints.length;i++) {
-	var desc18 = new ActionDescriptor();
-	desc18.putDouble( charIDToTypeID( "Hrzn" ), curvePoints[i][0] );
-	desc18.putDouble( charIDToTypeID( "Vrtc" ), curvePoints[i][1] );
-	list2.putObject( charIDToTypeID( "Pnt " ), desc18 );
+		var desc18 = new ActionDescriptor();
+		desc18.putDouble( charIDToTypeID( "Hrzn" ), curvePoints[i][0] );
+		desc18.putDouble( charIDToTypeID( "Vrtc" ), curvePoints[i][1] );
+		list2.putObject( charIDToTypeID( "Pnt " ), desc18 );
 	}
 	desc17.putList( charIDToTypeID( "Crv " ), list2 );
 	list1.putObject( charIDToTypeID( "CrvA" ), desc17 );
