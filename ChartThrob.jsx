@@ -35,13 +35,40 @@
 // An illustrated guide created by a Charthrob user:
 //	http://www.inkjetnegative.com/images/RNP/quick_guide_to_making_digital_ne.htm
 //
+
+// comments to configure JSHint for PhotoShop:
+/* globals app: false */
+/* globals UnitValue: false */
+/* globals Units: false */
+/* globals charIDToTypeID: false */
+/* globals ActionDescriptor: false */
+/* globals ActionReference: false */
+/* globals ActionList: false */
+/* globals executeAction: false */
+/* globals LayerKind: false */
+/* globals DialogModes: false */
+/* globals Justification: false */
+/* globals Window: false */
+/* globals NewDocumentMode: false */
+/* globals DocumentFill: false */
+/* globals DocumentMode: false */
+/* globals SaveOptions: false */
+/* globals ChangeMode: false */
+/* globals Socket: false */
+/* globals SolidColor: false */
+/* globals $: false */
+/* globals localize: false */
+/* globals alert: false */
+
+/* jshint ignore:start */
 #target photoshop
 app.bringToFront();
+/* jshint ignore:end */
 
 // global values /////////
 
-gVersion = 1.13;
-gDate = '26 July 2015';
+var gVersion = 1.13;
+var gDate = '26 July 2015';
 var gTitle = 'ChartThrob V'+gVersion;
 var gDoNotTrack = false; // set to true to disable web analytics
 
@@ -176,11 +203,11 @@ function resetDpi(newDPI)
 
 function helpDialog()
 {
-	'use strict';
-	function st(par,txt) {
+	//'use strict';
+	var st = function(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
-	}
+	};
 	var dlg = new Window('dialog', gTitle+' Help');
 	dlg.gttl = dlg.add('group');
 	dlg.gttl.orientation = 'column';
@@ -260,7 +287,7 @@ function helpDialog()
 	okayBtn.size = [100, 30];
 	dlg.defaultElement = okayBtn;
 	with (dlg) {
-		okayBtn.onClick = function () {this.parent.close(1); }
+		okayBtn.onClick = function () {this.parent.close(1); };
 	}
 	dlg.center();
 	var result = dlg.show();
@@ -401,12 +428,12 @@ function userDialog()
 	// need to set close-x to 'cancel'
 	dlg.cancelElement = dlg.bot.cancelBtn;
 	with (dlg) {
-		dlg.bpnl.okayBtn.onClick = function () {gMakeChart = true; this.parent.parent.close(1); }
+		dlg.bpnl.okayBtn.onClick = function () {gMakeChart = true; this.parent.parent.close(1); };
 		if (scannable === true) {
-			dlg.wpnl.okayBtn.onClick = function () {gMakeChart = false; this.parent.parent.close(1); }
+			dlg.wpnl.okayBtn.onClick = function () {gMakeChart = false; this.parent.parent.close(1); };
 		}
-		dlg.bot.helpBtn.onClick = function () {this.parent.parent.close(3); }
-		dlg.bot.cancelBtn.onClick = function () {this.parent.parent.close(2); }
+		dlg.bot.helpBtn.onClick = function () {this.parent.parent.close(3); };
+		dlg.bot.cancelBtn.onClick = function () {this.parent.parent.close(2); };
 	}
 	dlg.center();
 	var result = dlg.show();
@@ -470,9 +497,7 @@ function grayValues(ColorSamples)
 
 	}
 	var g = new SolidColor();
-	var nred;
-	var ngreen;
-	var nblue;
+	var nred, ngreen, nblue, s;
 	for (var i=0; i<ColorSamples.length; i++) {
 		s = ColorSamples[i];
 		nred = 255 * s.rgb.red / paperColor.rgb.red;
@@ -517,7 +542,7 @@ function showAllGrays(GraySamples,TheText)
 	var okayBtn = dlg.add('button');
 	okayBtn.text = 'Done';
 	with (dlg) {
-		okayBtn.onClick = function () {this.parent.close(1); }
+		okayBtn.onClick = function () {this.parent.close(1); };
 	}
 	dlg.center();
 	var result = dlg.show();
@@ -833,7 +858,7 @@ function writeText(x,y,userString,val,just)
 	c.rgb.red = val;
 	c.rgb.green = val;
 	c.rgb.blue = val;
-	var newTextLayer = activeDocument.artLayers.add();
+	var newTextLayer = app.activeDocument.artLayers.add();
 	newTextLayer.kind = LayerKind.TEXT;
 	newTextLayer.textItem.font = 'ArialMT';
 	newTextLayer.textItem.size = 20*(72/300); // points, not pixels
@@ -909,7 +934,7 @@ function make21()
 		grayPatch(b,v);
 		if (gText) {
 			var tv = 0;
-			if (v < 128) tv = 255;
+			if (v < 128) { tv = 255; }
 			writeText(gX21+6,y+20,(j+1),tv,Justification.LEFT);
 			app.activeDocument.flatten();
 		}
@@ -951,11 +976,12 @@ function selectPatch(i,j)
 // grab pixel color
 
 var getColorAt = function(doc, x, y) {
+	'use strict';
 	function selectBounds(doc, b) {
-	doc.selection.select([[ b[0], b[1] ],
-						   [ b[2], b[1] ],
-						   [ b[2], b[3] ],
-						   [ b[0], b[3] ]]);
+		doc.selection.select([[ b[0], b[1] ],
+							   [ b[2], b[1] ],
+							   [ b[2], b[3] ],
+							   [ b[0], b[3] ]]);
 	}
 	function findPV(h) {
 		for (var i = 0; i <= 255; i++ ) {
@@ -979,7 +1005,7 @@ var getColorAt = function(doc, x, y) {
 function patch(i,j)
 {
 	'use strict';
-	doc = app.activeDocument;
+	var doc = app.activeDocument;
 	selectPatch(i,j);
 	doc.activeLayer.applyAverage();
 	if (gShowSamples) {
@@ -1087,7 +1113,7 @@ function curveLayer(curvePoints)
 	ref10.putEnumerated( charIDToTypeID( 'Chnl' ), charIDToTypeID( 'Chnl' ), charIDToTypeID( 'Cmps' ) );
 	desc17.putReference( charIDToTypeID( 'Chnl' ), ref10 );
 	var list2 = new ActionList();
-	for(i=0;i<curvePoints.length;i++) {
+	for(var i=0;i<curvePoints.length;i++) {
 		var desc18 = new ActionDescriptor();
 		desc18.putDouble( charIDToTypeID( 'Hrzn' ), curvePoints[i][0] );
 		desc18.putDouble( charIDToTypeID( 'Vrtc' ), curvePoints[i][1] );
@@ -1115,7 +1141,7 @@ function curveLayer(curvePoints)
 
 function scanResultsReport()
 {
-	'use strict';
+	//'use strict';
 	function st(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
@@ -1170,7 +1196,7 @@ function scanResultsReport()
 	var okayBtn = dlg.add('button');
 	okayBtn.text = 'Done';
 	with (dlg) {
-		okayBtn.onClick = function () {this.parent.close(1); }
+		okayBtn.onClick = function () {this.parent.close(1); };
 	}
 	dlg.center();
 	gTracker.sendPayload('t=pageview&dp=%2Fchartthrob%2Freport&dt=ChartThrob%20Report');
@@ -1184,7 +1210,7 @@ function scanChart()
 {
 	'use strict';
 	var i, j;
-	if (!app.documents.length > 0) {	// stop if no document is opened.
+	if (app.documents.length < 1) {	// stop if no document is opened.
 		alert('Sorry, No Current Document\n' +
 			'To use this script, crop a scanned print to the\n' +
 			'original chart boundaries.\n' +
