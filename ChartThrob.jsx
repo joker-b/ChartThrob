@@ -37,28 +37,10 @@
 //
 
 // comments to configure JSHint for PhotoShop:
-/* globals app: false */
-/* globals UnitValue: false */
-/* globals Units: false */
-/* globals charIDToTypeID: false */
-/* globals ActionDescriptor: false */
-/* globals ActionReference: false */
-/* globals ActionList: false */
-/* globals executeAction: false */
-/* globals LayerKind: false */
-/* globals DialogModes: false */
-/* globals Justification: false */
-/* globals Window: false */
-/* globals NewDocumentMode: false */
-/* globals DocumentFill: false */
-/* globals DocumentMode: false */
-/* globals SaveOptions: false */
-/* globals ChangeMode: false */
-/* globals Socket: false */
-/* globals SolidColor: false */
-/* globals $: false */
-/* globals localize: false */
-/* globals alert: false */
+/* globals app, UnitValue, Units, charIDToTypeID, ActionDescriptor, ActionReference, ActionList,
+	executeAction, LayerKind, DialogModes, Justification, Window, NewDocumentMode,
+	DocumentFill, DocumentMode, SaveOptions, ChangeMode, Socket, SolidColor,
+	$, localize, alert */
 
 /* jshint ignore:start */
 #target photoshop
@@ -203,7 +185,7 @@ function resetDpi(newDPI)
 
 function helpDialog()
 {
-	//'use strict';
+	'use strict';
 	var st = function(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
@@ -1141,7 +1123,7 @@ function curveLayer(curvePoints)
 
 function scanResultsReport()
 {
-	//'use strict';
+	'use strict';
 	function st(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
