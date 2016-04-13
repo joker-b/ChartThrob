@@ -4,9 +4,9 @@ _ChartThrob_ runs inside of <a href="http://www.adobe.com/">Adobe Photoshop</a> 
 
 _ChartThrob_ creates profiles for _your_ process of choice, for _your_ printer, and lets you create consistently-beautiful digital negatives from _your_ pictures &#151; every single time.
 
-#### Current Version: 1.13
+#### Current Version: 1.14
 
-The current version is <b>1.13</b> -- by request, an option was added to negate (invert) the final output curve, for use with [QuadToneRIP.](http://www.quadtonerip.com/html/QTRoverview.html)
+The current version is <b>1.14</b> -- by request, an option was added to negate (invert) the final output curve, for use with [QuadToneRIP.](http://www.quadtonerip.com/html/QTRoverview.html)
 
 # Installing _ChartThrob_
 
