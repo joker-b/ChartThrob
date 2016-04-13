@@ -49,8 +49,8 @@ app.bringToFront();
 
 // global values /////////
 
-var gVersion = 1.13;
-var gDate = '26 July 2015';
+var gVersion = 1.14;
+var gDate = '12 April 2016';
 var gTitle = 'ChartThrob V'+gVersion;
 var gDoNotTrack = false; // set to true to disable web analytics
 
@@ -1283,7 +1283,7 @@ function buildChart()
 	var cJust = Justification.CENTER;
 	var L;
 	var S = 16*(72/300.0); // points, not pixels
-	L = writeText(cCtr,cBot-gDPIScale*75,gTitle+' ©2006-2015 Kevin Bjorke',0,cJust);
+	L = writeText(cCtr,cBot-gDPIScale*75,gTitle+' Â©2006-2015 Kevin Bjorke',0,cJust);
 	L.textItem.size = S;
 	L = writeText(cCtr,cBot-gDPIScale*58,'http://www.botzilla.com/',0,cJust);
 	L.textItem.size = S;
