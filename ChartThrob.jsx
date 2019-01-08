@@ -3,7 +3,7 @@
 // http://www.botzilla.com/
 //
 // SEE DETAILED INSTRUCTIONS AND THE FAQ:
-//	http://www.botzilla.com/blog/archives/000544.html
+//	http://www.botzilla.com/gearhead/2006/10/24/ChartThrob-A-Tool-for-Printing-Digital-Negatives.html
 //
 // THIS IS A JSX JAVASCRIPT PROGRAM FOR ADOBE PHOTOSHOP CS2 AND HIGHER
 //	To install, place it in a folder under your Photoshop program
@@ -49,8 +49,8 @@ app.bringToFront();
 
 // global values /////////
 
-var gVersion = 1.14;
-var gDate = '12 April 2016';
+var gVersion = 1.15;
+var gDate = '5 January 2019';
 var gTitle = 'ChartThrob V'+gVersion;
 var gDoNotTrack = false; // set to true to disable web analytics
 
@@ -189,12 +189,13 @@ function helpDialog()
 	var st = function(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
+		return p;
 	};
 	var dlg = new Window('dialog', gTitle+' Help');
 	dlg.gttl = dlg.add('group');
 	dlg.gttl.orientation = 'column';
 	dlg.gttl.spacing = 2;
-	st(dlg.gttl,(gTitle+', '+gDate));
+	var tp = st(dlg.gttl,(gTitle+', '+gDate));
 	st(dlg.gttl,'http://www.botzilla.com/');
 	dlg.gtop = dlg.add('group');
 	dlg.gtop.orientation = 'column';
@@ -282,6 +283,7 @@ function userDialog()
 	function st(par,txt) {
 		var p = par.add('statictext');
 		p.text = txt;
+		return p;
 	}
 	// var vers = version_string();
 	var scannable = true;
@@ -308,7 +310,7 @@ function userDialog()
 	dlg.gttl = dlg.add('group');
 	dlg.gttl.orientation = 'column';
 	dlg.gttl.spacing = 2;
-	st(dlg.gttl,(gTitle+', '+gDate));
+	var tp = st(dlg.gttl,(gTitle+', '+gDate));
 	st(dlg.gttl,'http://www.botzilla.com/');
 
 	// scan panel
@@ -1283,7 +1285,7 @@ function buildChart()
 	var cJust = Justification.CENTER;
 	var L;
 	var S = 16*(72/300.0); // points, not pixels
-	L = writeText(cCtr,cBot-gDPIScale*75,gTitle+' Â©2006-2015 Kevin Bjorke',0,cJust);
+	L = writeText(cCtr,cBot-gDPIScale*75,gTitle+' ©2006-2019 Kevin Bjorke',0,cJust);
 	L.textItem.size = S;
 	L = writeText(cCtr,cBot-gDPIScale*58,'http://www.botzilla.com/',0,cJust);
 	L.textItem.size = S;
