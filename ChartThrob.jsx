@@ -404,7 +404,7 @@ function userDialog()
 	dlg.bot.cancelBtn = dlg.bot.add('button');
 		dlg.bot.cancelBtn.text = strButtonCancel;
 		dlg.bot.cancelBtn.name = 'cancel';
-		dlg.bot.cancelBtn.helpTip = 'Get ChartThrob Help!';
+		dlg.bot.cancelBtn.helpTip = 'Close window!';
 	dlg.bot.helpBtn = dlg.bot.add('button');
 		dlg.bot.helpBtn.text = strButtonHelp;
 		dlg.bot.helpBtn.name = 'help';
