@@ -75,7 +75,7 @@ The new curve layer is hidden, because the curve isn't meant for adjusting the s
 
 When a _ChartThrob_ curve is applied to a B&W image, the image's original gray values will be remapped so that they will print to match the grayscale range of the target printing medium, as long as you're consistent in the print exposure and processing. So if you expose a silver-gelatin contact print for 30 seconds, then as long as you expose and process all subsequent prints the same amount, they should print consistently and the curves will adjust them perfectly to that tonal range.
 
-You can apply the curve to other images either by saving & loading it as a Photoshop .csv file, or just drag the curves layer from the layers palette onto another picture if it's opened in Photoshop.
+You can apply the curve to other images either by saving & loading it as a Photoshop .acv file, or just drag the curves layer from the layers palette onto another picture if it's opened in Photoshop.
 
 <center><img alt="IMG_7240-180x120-trio.jpg" src="http://www.botzilla.com/blog/pix2006/IMG_7240-180x120-trio.jpg" width="380" height="150" border="0" /></center>
 
